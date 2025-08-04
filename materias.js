@@ -64,5 +64,5 @@ const materias = [
   { id: "GESTION2", nombre: "Gestión de Empresas", creditos: 4, semestre: 9, pre: [] },
 
   // Décimo semestre
-  { id: "PRACTICA", nombre: "Practicantado", creditos: 55, semestre: 10, pre: [] } // En PDF antiguo son 50 créditos
+  { id: "PRACTICA", nombre: "Practicando", creditos: 55, semestre: 10, pre: [] } // En PDF antiguo son 50 créditos
 ];
