@@ -1,0 +1,51 @@
+body {
+  background-color: #fce4ec;
+  color: #4a148c;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #880e4f;
+}
+
+#malla {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.materia {
+  border: 2px solid #ce93d8;
+  border-radius: 12px;
+  padding: 12px;
+  width: 180px;
+  background-color: #f8bbd0;
+  cursor: pointer;
+  transition: transform 0.2s;
+  white-space: pre-line;
+}
+
+.materia:hover {
+  transform: scale(1.05);
+}
+
+.hecha {
+  background-color: #c5cae9;
+}
+
+.bloqueada {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.semestre-titulo {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
