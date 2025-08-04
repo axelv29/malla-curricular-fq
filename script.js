@@ -58,10 +58,3 @@ function render() {
 }
 
 render();
-
-
-  document.getElementById("creditos-info").innerText =
-    `Créditos completados: ${creditosTotales}`;
-}
-
-render();
