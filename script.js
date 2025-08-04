@@ -5,6 +5,10 @@ function puedeAprobar(materia) {
   return materia.pre.every(id => estado[id]);
 }
 
+function faltantes(materia) {
+  return materia.pre.filter(id => !estado[id]);
+}
+
 function render() {
   contenedor.innerHTML = "";
 
@@ -22,7 +26,7 @@ function render() {
 
     const div = document.createElement("div");
     div.className = "materia";
-    div.textContent = `${m.nombre}\n${m.creditos} créditos`;
+    div.textContent = `${m.nombre}\n(${m.creditos} créditos)`;
 
     if (estado[m.id]) {
       div.classList.add("hecha");
@@ -32,7 +36,15 @@ function render() {
     }
 
     div.onclick = () => {
-      if (!puedeAprobar(m)) return;
+      if (!estado[m.id] && !puedeAprobar(m)) {
+        const faltan = faltantes(m).map(id => {
+          const mat = materias.find(mm => mm.id === id);
+          return mat ? mat.nombre : id;
+        }).join(", ");
+        alert(`No puedes cursar "${m.nombre}" hasta completar: ${faltan}`);
+        return;
+      }
+
       estado[m.id] = !estado[m.id];
       localStorage.setItem("estadoMaterias", JSON.stringify(estado));
       render();
@@ -40,6 +52,13 @@ function render() {
 
     contenedor.appendChild(div);
   });
+
+  document.getElementById("creditos-info").innerText =
+    `Créditos completados: ${creditosTotales}`;
+}
+
+render();
+
 
   document.getElementById("creditos-info").innerText =
     `Créditos completados: ${creditosTotales}`;
