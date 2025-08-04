@@ -19,8 +19,8 @@ function render() {
     if (m.semestre !== semestreActual) {
       semestreActual = m.semestre;
       const titulo = document.createElement("div");
-      titulo.className = "semestre";
-      titulo.textContent = `📚 Semestre ${semestreActual}`;
+      titulo.className = "semestre-titulo";
+      titulo.textContent = `Semestre ${semestreActual}`;
       contenedor.appendChild(titulo);
     }
 
@@ -41,7 +41,7 @@ function render() {
           const mat = materias.find(mm => mm.id === id);
           return mat ? mat.nombre : id;
         }).join(", ");
-        alert(`❌ Para cursar "${m.nombre}" te falta completar: ${faltan}`);
+        alert(`No puedes cursar "${m.nombre}" hasta completar: ${faltan}`);
         return;
       }
 
@@ -54,7 +54,7 @@ function render() {
   });
 
   document.getElementById("creditos-info").innerText =
-    `✅ Créditos completados: ${creditosTotales}`;
+    `Créditos completados: ${creditosTotales}`;
 }
 
 render();
