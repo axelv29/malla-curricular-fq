@@ -6,10 +6,10 @@ const materias = [
   { id: "RIESGOS", nombre: "Prevención de Riesgos en el Laboratorio", creditos: 4, semestre: 1, pre: [] },
 
   // Segundo semestre
-  { id: "MAT02", nombre: "Matemática 02", creditos: 10, semestre: 2, pre: [] },
-  { id: "QUI_GEN_II", nombre: "Química General II", creditos: 8, semestre: 2, pre: [] },
+  { id: "MAT02", nombre: "Matemática 02", creditos: 10, semestre: 2, pre: ["MAT01"] },
+  { id: "QUI_GEN_II", nombre: "Química General II", creditos: 8, semestre: 2, pre: ["QUI_GEN_I", "RIESGOS"] },
   { id: "FIS101", nombre: "Física 101", creditos: 7, semestre: 2, pre: [] },
-  { id: "BIO_II", nombre: "Introducción a las Ciencias Biológicas II", creditos: 5, semestre: 2, pre: [] },
+  { id: "BIO_II", nombre: "Introducción a las Ciencias Biológicas II", creditos: 5, semestre: 2, pre: ["BIO_I", "RIESGOS"] },
 
   // Tercer semestre
   { id: "QO101", nombre: "Química Orgánica 101", creditos: 11, semestre: 3, pre: [] },
