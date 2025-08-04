@@ -1,51 +1,78 @@
 body {
-  background-color: #fce4ec;
+  background-color: #fdf0f5;
   color: #4a148c;
-  font-family: sans-serif;
-  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 20px;
 }
 
 h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
   color: #880e4f;
+  text-shadow: 1px 1px 2px #e1bee7;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #ce93d8;
+  margin-bottom: 30px;
+}
+
+#creditos-info {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.semestre {
+  background-color: #f3e5f5;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin: 30px auto 10px auto;
+  max-width: 800px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  color: #6a1b9a;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #malla {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .materia {
+  background-color: #f8bbd0;
   border: 2px solid #ce93d8;
   border-radius: 12px;
   padding: 12px;
-  width: 180px;
-  background-color: #f8bbd0;
-  cursor: pointer;
-  transition: transform 0.2s;
+  width: 200px;
+  min-height: 80px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.08);
   white-space: pre-line;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 14px;
 }
 
 .materia:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
 }
 
 .hecha {
   background-color: #c5cae9;
+  border-color: #9fa8da;
 }
 
 .bloqueada {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.semestre-titulo {
-  width: 100%;
-  text-align: left;
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 20px;
+  background-color: #f3e5f5;
+  border-color: #d1c4e9;
 }
