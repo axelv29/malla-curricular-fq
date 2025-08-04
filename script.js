@@ -10,7 +10,7 @@ function render() {
 
   let creditosTotales = 0;
   
-  // Primero agrupamos las materias por semestre
+  // Agrupamos las materias por semestre
   const materiasPorSemestre = {};
   materias.forEach(m => {
     if (!materiasPorSemestre[m.semestre]) {
@@ -43,7 +43,12 @@ function render() {
     materiasPorSemestre[semestre].forEach(m => {
       const div = document.createElement("div");
       div.className = "materia";
-      div.textContent = `${m.nombre}\n${m.creditos} créditos`;
+      
+      // Nueva estructura con divs separados para nombre y créditos
+      div.innerHTML = `
+        <div class="materia-nombre">${m.nombre}</div>
+        <div class="materia-creditos">${m.creditos} créditos</div>
+      `;
 
       if (estado[m.id]) {
         div.classList.add("hecha");
