@@ -8,7 +8,8 @@ function reiniciarProgreso() {
   if (confirm("¿Estás seguro que quieres reiniciar todo tu progreso? Esta acción no se puede deshacer.")) {
     localStorage.removeItem("estadoMaterias");
     estado = {}; // Resetea el objeto en memoria
-    render(); // Vuelve a renderizar con todo desmarcado
+    // Forzar reinicio sin necesidad de F5
+    location.reload(); // Esta línea recarga la página automáticamente
   }
 }
 
