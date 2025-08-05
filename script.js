@@ -5,11 +5,28 @@ function puedeAprobar(materia) {
   return materia.pre.every(id => estado[id]);
 }
 function reiniciarProgreso() {
-  if (confirm("¿Estás seguro que quieres reiniciar todo tu progreso? Esta acción no se puede deshacer.")) {
+  if (confirm("¿Estás seguro que quieres reiniciar todo tu progreso?")) {
     localStorage.removeItem("estadoMaterias");
-    estado = {}; // Resetea el objeto en memoria
-    // Forzar reinicio sin necesidad de F5
-    location.reload(); // Esta línea recarga la página automáticamente
+    estado = {};
+    
+    // Actualizar todas las materias visualmente
+    document.querySelectorAll('.materia').forEach(materia => {
+      materia.classList.remove('hecha');
+      materia.classList.add('bloqueada');
+    });
+    
+    // Actualizar el contador de créditos
+    document.getElementById("creditos-info").innerText = "Créditos completados: 0";
+    
+    // Re-evaluar el estado de bloqueo de todas las materias
+    materias.forEach(m => {
+      const elemento = document.getElementById(m.id);
+      if (elemento) {
+        if (puedeAprobar(m)) {
+          elemento.classList.remove('bloqueada');
+        }
+      }
+    });
   }
 }
 
