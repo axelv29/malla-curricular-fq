@@ -7,7 +7,7 @@ const materias = [
 
   // Segundo semestre
   { id: "MAT_B", nombre: "Matemática B", creditos: 6, semestre: 2, pre: ["MAT_A"] },
-  { id: "MAT_C", nombre: "Matemática C", creditos: 8, semestre: 2, pre: [] }, // No aparece en el PDF antiguo
+  { id: "MAT_C", nombre: "Matemática C", creditos: 8, semestre: 2, pre: ["MAT_A"] }, // No aparece en el PDF antiguo
   { id: "QUI_GEN_II", nombre: "Química General II", creditos: 8, semestre: 2, pre: ["QUI_GEN_I", "RIESGOS"] },
   { id: "BIO_II", nombre: "Introducción a las Ciencias Biológicas II", creditos: 5, semestre: 2, pre: ["BIO_I", "RIESGOS"] },
   { id: "FIS101", nombre: "Física 101", creditos: 7, semestre: 2, pre: ["MAT_A"] },
@@ -16,7 +16,7 @@ const materias = [
   { id: "QO101", nombre: "Química Orgánica 101", creditos: 11, semestre: 3, pre: ["QUI_GEN_II"] },
   { id: "QA1", nombre: "Química Analítica 1", creditos: 10, semestre: 3, pre: ["QUI_GEN_II"] },
   { id: "QI_T", nombre: "Química Inorgánica (T)", creditos: 6, semestre: 3, pre: ["QUI_GEN_II"] },
-  { id: "QI_L", nombre: "Laboratorio de Química Inorgánica", creditos: 5, semestre: 3, pre: [] }, // No especifica prerrequisitos
+  { id: "QI_L", nombre: "Laboratorio de Química Inorgánica", creditos: 5, semestre: 3, pre: ["QUI_GEN_II"] }, // No especifica prerrequisitos
   { id: "FIS102", nombre: "Física 102", creditos: 7, semestre: 3, pre: ["FIS101"] }, // Asumo que FIS101 equivale a Física 001
   { id: "FISIO", nombre: "Fisiología", creditos: 7, semestre: 3, pre: ["BIO_II"] },
 
@@ -39,11 +39,11 @@ const materias = [
   { id: "FARMACOGNOSIA", nombre: "Farmacognosia", creditos: 9, semestre: 6, pre: ["QO103L", "QO104", "QA3"] }, // También requiere Botánica (simultánea)
   { id: "BOTANICA", nombre: "Botánica", creditos: 4, semestre: 6, pre: ["BIO_II", "QO103L", "QO104", "QA3"] },
   { id: "MICROBIO_T", nombre: "Microbiologia General (T)", creditos: 6, semestre: 6, pre: ["BIO_II", "BIOQ"] },
-  { id: "MICROBIO_L", nombre: "Laboratorio de Análisis Microbiológico", creditos: 6, semestre: 6, pre: [] }, // No especifica
+  { id: "MICROBIO_L", nombre: "Laboratorio de Análisis Microbiológico", creditos: 6, semestre: 6, pre: ["BIO_I","BIOQ" ] }, // No especifica
   { id: "INMUNO1", nombre: "Inmunología 1", creditos: 5, semestre: 6, pre: ["BIO_II", "BIOQ"] }, // En PDF antiguo son 3 créditos
   { id: "FARMACOKINETICA", nombre: "Farmacocinética y Biofarmacia", creditos: 8, semestre: 6, pre: ["FISIO", "MAT_B"] }, // En PDF antiguo son 7 créditos
   { id: "TALLER_INTEG", nombre: "Taller de Integración de Ciencias Biológicas y Biomédicas", creditos: 2, semestre: 6, pre: ["FISIO", "FISIOPAT"] },
-  { id: "UC_CALIDAD", nombre: "UC Área Calidad", creditos: 4, semestre: 6, pre: [] }, // No aparece en PDF antiguo
+  { id: "UC_CALIDAD", nombre: "UC Área Calidad", creditos: 4, semestre: 6, pre: ["MAT_C","QA3"] }, // No aparece en PDF antiguo
 
   // Séptimo semestre
   { id: "QF101", nombre: "Química Farmacéutica 101 - Teórico", creditos: 8, semestre: 7, pre: ["QO102", "QO103L", "QO104", "QA3", "FQ102", "FARMACOGNOSIA", "BIOQ"] },
