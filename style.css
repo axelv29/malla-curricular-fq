@@ -74,21 +74,27 @@ h1 {
   border-top: 1px dashed #b39ddb;
 }
 
+/* Estilo para materias aprobadas (amarillo pastel) */
 .hecha {
-  background-color: #e8eaf6;
-  border-color: #7986cb;
+  background-color: #fff9c4;  /* Amarillo pastel claro */
+  border-color: #ffd54f;      /* Amarillo más intenso para el borde */
 }
 
 .hecha::before {
-  background: linear-gradient(to bottom, #3f51b5, #2196f3);
+  background: linear-gradient(to bottom, #ffd54f, #ffca28); /* Degradado amarillo */
 }
 
 .hecha .materia-nombre {
-  color: #283593;
+  color: #5d4037; /* Color marrón oscuro para mejor contraste */
 }
 
 .hecha .materia-creditos {
-  color: #5c6bc0;
+  color: #8d6e63; /* Color marrón claro */
+}
+.hecha:hover {
+  background-color: #fff59d; /* Amarillo un poco más intenso al pasar el mouse */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .bloqueada {
