@@ -4,6 +4,16 @@ const estado = JSON.parse(localStorage.getItem("estadoMaterias")) || {};
 function puedeAprobar(materia) {
   return materia.pre.every(id => estado[id]);
 }
+function reiniciarProgreso() {
+  if (confirm("¿Estás seguro que quieres reiniciar todo tu progreso? Esta acción no se puede deshacer.")) {
+    localStorage.removeItem("estadoMaterias");
+    estado = {}; // Resetea el objeto en memoria
+    render(); // Vuelve a renderizar con todo desmarcado
+  }
+}
+
+// Agregar evento al botón
+document.getElementById("reiniciar-btn").addEventListener("click", reiniciarProgreso);
 
 function render() {
   contenedor.innerHTML = "";
