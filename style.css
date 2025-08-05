@@ -116,6 +116,29 @@ h1 {
   border-bottom: 2px solid #d1c4e9;
   color: #4527a0;
 }
+/* Estilo para el botón de reinicio */
+.boton-reiniciar {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.boton-reiniciar:hover {
+  background-color: #c62828;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.boton-reiniciar:active {
+  transform: translateY(0);
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
